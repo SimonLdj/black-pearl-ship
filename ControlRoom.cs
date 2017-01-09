@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlackPearlShip.Algorithms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,18 @@ namespace BlackPearlShip
     public class ControlRoom : IRadioListeners
     {
         private RadioReceiver Radio { get; set; }
+        private MealAlgo MealAlgo { get; set; }
+        private WeaponAlgo WeaponAlgo { get; set; }
+        private DrinkingAlgo DrinkingAlgo { get; set; }
 
         public ControlRoom(RadioReceiver radio)
         {
             this.Radio = radio;
             this.Radio.StartListen(this);
+
+            this.MealAlgo = new MealAlgo(this);
+            this.WeaponAlgo = new WeaponAlgo(this);
+            this.DrinkingAlgo = new DrinkingAlgo(this);
         }
 
         public void Receive(string data)
