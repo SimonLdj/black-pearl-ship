@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace BlackPearlShip
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            // create radio and give it to the control room
+            var radio = new RadioReceiver();
+            var controlRoom = new ControlRoom(radio);
+
+            // Broadcast some data through the radio
+            radio.Broadcast("Hello Black Pearl!");
+            radio.Broadcast("How are you today?");
+
         }
     }
 }
