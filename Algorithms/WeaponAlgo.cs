@@ -104,6 +104,4 @@ namespace BlackPearlShip.Algorithms
             return totalProbability > 50 ? true : false;
         }
     }
-
-    public enum Direction { North, West, East, South}
 }

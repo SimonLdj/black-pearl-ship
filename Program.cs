@@ -15,9 +15,26 @@ namespace BlackPearlShip
             var controlRoom = new ControlRoom(radio);
 
             // Broadcast some data through the radio
-            radio.Broadcast("Hello Black Pearl!");
-            radio.Broadcast("How are you today?");
+            radio.BroadcastMessage("Hello Black Pearl!");
 
+            // day 1
+            runTime(radio, 0, 7);
+            radio.BroadcastCrewHunger(6);
+            radio.BroadcastTime(7);
+            runTime(radio, 8, 14);
+            radio.BroadcastEnemyDetected(Direction.South);
+            runTime(radio, 14, 22);
+        }
+
+        /// <summary>
+        /// Help method to pass time from start to end (not including end)
+        /// </summary>
+        private static void runTime(RadioReceiver radio, int start, int end)
+        {
+            for (int i = start; i < end; i++)
+            {
+                radio.BroadcastTime(i);
+            }
         }
     }
 }

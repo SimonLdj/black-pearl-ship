@@ -8,8 +8,25 @@ namespace BlackPearlShip
     public interface IRadioListeners
     {
         /// <summary>
-        /// Receive data form radio
+        /// Receive message from the radio
         /// </summary>
-        void Receive(string data);
+        void ReceiveMessage(string message);
+
+        /// <summary>
+        /// Receive time data (0-23) from the radio
+        /// </summary>
+        void ReceiveTime(int time);
+
+        /// <summary>
+        /// Receive crew hunger (1-10)
+        /// </summary>
+        void ReceiveCrewHunger(int hunger);
+
+        /// <summary>
+        /// Receive enemies detected direction
+        /// </summary>
+        void ReceiveEnemyDirection(Direction direction);
     }
+
+    public enum Direction { North, West, East, South}
 }

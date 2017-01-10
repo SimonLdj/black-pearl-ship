@@ -30,29 +30,24 @@ namespace BlackPearlShip
 
         #region Input from Radio
 
-        /// <summary>
-        /// Receive data from the radio
-        /// (Implement IRadioListeners)
-        /// </summary>
-        public void Receive(string data)
+        public void ReceiveMessage(string message)
         {
-            // TODO: do some logic
-            throw new NotImplementedException();
+            Console.WriteLine("Radio: " + message);
         }
 
-        public void SetTime(int time)
+        public void ReceiveTime(int time)
         {
             MealAlgo.InputTime(time);
             WeaponAlgo.InputTime(time);
             DrinkingAlgo.InputTime(time);
         }
 
-        public void SetCrewHunger(int hunger)
+        public void ReceiveCrewHunger(int hunger)
         {
             MealAlgo.InputCrewHunger(hunger);
         }
 
-        public void SetEnemyDirection(Direction direction)
+        public void ReceiveEnemyDirection(Direction direction)
         {
             WeaponAlgo.InputEnemiesDirection(direction);
         }

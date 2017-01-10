@@ -27,14 +27,35 @@ namespace BlackPearlShip
             Listeners.Add(listener);
         }
 
-        /// <summary>
-        /// Broadcast data to listeners
-        /// </summary>
-        public void Broadcast(string data)
+        public void BroadcastMessage(string message)
         {
             foreach (var listener in Listeners)
             {
-                listener.Receive(data);
+                listener.ReceiveMessage(message);
+            }
+        }
+
+        public void BroadcastTime(int time)
+        {
+            foreach (var listener in Listeners)
+            {
+                listener.ReceiveTime(time);
+            }
+        }
+
+        public void BroadcastCrewHunger(int hunger)
+        {
+            foreach (var listener in Listeners)
+            {
+                listener.ReceiveCrewHunger(hunger);
+            }
+        }
+
+        public void BroadcastEnemyDetected(Direction direction)
+        {
+            foreach (var listener in Listeners)
+            {
+                listener.ReceiveEnemyDirection(direction);
             }
         }
     }
