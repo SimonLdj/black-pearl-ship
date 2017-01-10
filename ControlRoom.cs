@@ -28,6 +28,8 @@ namespace BlackPearlShip
             this.DrinkingAlgo = new DrinkingAlgo(this);
         }
 
+        #region Input from Radio
+
         /// <summary>
         /// Receive data from the radio
         /// (Implement IRadioListeners)
@@ -38,6 +40,25 @@ namespace BlackPearlShip
             throw new NotImplementedException();
         }
 
+        public void SetTime(int time)
+        {
+            MealAlgo.InputTime(time);
+            WeaponAlgo.InputTime(time);
+            DrinkingAlgo.InputTime(time);
+        }
+
+        public void SetCrewHunger(int hunger)
+        {
+            MealAlgo.InputCrewHunger(hunger);
+        }
+
+        public void SetEnemyDirection(Direction direction)
+        {
+            WeaponAlgo.InputEnemiesDirection(direction);
+        }
+
+        #endregion Input from Radio
+
         #region input from algorithms
 
         /// <summary>
@@ -45,7 +66,10 @@ namespace BlackPearlShip
         /// </summary>
         public void SetAmountToDrink(int amount)
         {
+            // TODO: let the crew drink
 
+            // let other algorithms know about it
+            WeaponAlgo.InputAmountCrewDrank(amount);
         }
 
         /// <summary>
@@ -53,7 +77,8 @@ namespace BlackPearlShip
         /// </summary>
         public void SetTypeOfFoodToEat(FoodType foodType)
         {
-
+            WeaponAlgo.InputCrewAteType(foodType);
+            DrinkingAlgo.InputFoodAte(foodType);
         }
 
         /// <summary>
@@ -77,7 +102,7 @@ namespace BlackPearlShip
         /// </summary>
         public void SetHitOrMissEnemyShip(bool isHit)
         {
-
+            DrinkingAlgo.InputHitOrMiss(isHit);
         }
 
         #endregion input from algorithms

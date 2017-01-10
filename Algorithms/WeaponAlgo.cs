@@ -8,11 +8,10 @@ namespace BlackPearlShip.Algorithms
 {
     /// <summary>
     /// Algorithm that controls all fire weapons in the ship.
-    /// Input:   enemies detected
+    /// Input:   time
     ///          enemies direction
     ///          amount crew drank (From DrinkAlgo)
-    ///          amount crew ate (from MealAlgo)
-    ///          time
+    ///          type of food crew ate (from MealAlgo)
     /// Output:  cannon number to fire
     ///          did we hit or miss the target
     /// </summary>
@@ -32,7 +31,7 @@ namespace BlackPearlShip.Algorithms
 
         // Input
 
-        public void InputEnemiesDetected(bool isDetected, Direction direction)
+        public void InputEnemiesDirection(Direction direction)
         {
             var rumEffect = CalculateRumEffect(rumAccumilation, lastFoodCrewAte);
             var isHit = CalculateCanHit(rumEffect, direction);
@@ -44,7 +43,7 @@ namespace BlackPearlShip.Algorithms
             rumAccumilation += amount;
         }
 
-        public void InputCrewAte(FoodType type)
+        public void InputCrewAteType(FoodType type)
         {
             lastFoodCrewAte = type;
         }
