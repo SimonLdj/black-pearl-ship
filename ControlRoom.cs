@@ -64,6 +64,22 @@ namespace BlackPearlShip
 
         }
 
+        /// <summary>
+        /// Receive from WeaponAlgo canon number to fire
+        /// </summary>
+        public void SetCanonToFire(int canonNumber)
+        {
+
+        }
+
+        /// <summary>
+        /// Receive from WeaponAlgo did we hit or miss the enemy ship
+        /// </summary>
+        public void SetHitOrMissEnemyShip(bool isHit)
+        {
+
+        }
+
         #endregion input from algorithms
     }
 }
