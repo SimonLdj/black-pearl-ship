@@ -48,6 +48,22 @@ namespace BlackPearlShip
 
         }
 
+        /// <summary>
+        /// Receive from MealAlgo type of food crew should eat
+        /// </summary>
+        public void SetTypeOfFoodToEat(FoodType foodType)
+        {
+
+        }
+
+        /// <summary>
+        /// Receive from MealAlgo amount of food crew should eat
+        /// </summary>
+        public void SetAmountOfFoodToEat(int amount)
+        {
+
+        }
+
         #endregion input from algorithms
     }
 }
