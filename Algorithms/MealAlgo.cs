@@ -22,4 +22,6 @@ namespace BlackPearlShip.Algorithms
             this.ControlRoom = cr;
         }
     }
+
+    public enum FoodType { SeaBiscuits, SaltedMeat, Slop, Fruit, Bread, Veggies}
 }

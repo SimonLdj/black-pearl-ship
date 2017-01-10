@@ -28,10 +28,26 @@ namespace BlackPearlShip
             this.DrinkingAlgo = new DrinkingAlgo(this);
         }
 
+        /// <summary>
+        /// Receive data from the radio
+        /// (Implement IRadioListeners)
+        /// </summary>
         public void Receive(string data)
         {
             // TODO: do some logic
             throw new NotImplementedException();
         }
+
+        #region input from algorithms
+
+        /// <summary>
+        /// Receive from DrinkingAlgo how much the crew should drink
+        /// </summary>
+        public void SetAmountToDrink(int amount)
+        {
+
+        }
+
+        #endregion input from algorithms
     }
 }
