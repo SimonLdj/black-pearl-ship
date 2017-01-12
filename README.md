@@ -19,7 +19,7 @@ The ship's `Crew` uses the `Radio` to communicate their status to the `Captain` 
 `Department`s can produce their outputs at any point in time and update the `Captain` of
 their status. Note that some `Department`'s input can depend on others' output.
 
-## The Crew
+## The crew
 
 The `Crew` can use the ship's `Radio` to inform the `Captain` of the following things:
 
@@ -33,7 +33,7 @@ The `Crew` can use the ship's `Radio` to inform the `Captain` of the following t
 
 There are currently three `Department`s the `Captain` consults with to control the Ship.
 
-1. **`RumHall*`* - Determines how much rum the crew should drink.
+1. `RumHall` - Determines how much rum the crew should drink.
     - Inputs:
       - Time of day
       - Number of days at sea
@@ -42,7 +42,7 @@ There are currently three `Department`s the `Captain` consults with to control t
     - Outputs:
         - Amount of rum the crew should drink (at the current time)
 
-2. **`GunDeck`** - Determines if the ship should fire on an enemy.
+2. `GunDeck` - Determines if the ship should fire on an enemy.
     - Inputs:
       - Time of day
       - Whether an enemy is in range
@@ -52,7 +52,7 @@ There are currently three `Department`s the `Captain` consults with to control t
         - The number of the cannon that should be fired
         - Whether a target was hit (published some time after the above)
 
-3. **`Galley`** - Determines when, what and how much the crew should eat. 
+3. `Galley` - Determines when, what and how much the crew should eat.
     - Inputs:
       - Time of day
       - Crew hunger level
@@ -72,10 +72,10 @@ a small platform on top of the tallest mast from which he is to observe. The mon
 an enemy ship is in range (instead of the `Crew`), and, after the `GunDeck` fires upon it, he must
 report whether it was hit by the cannons (instead of the `GunDeck`).
 
-In addition, due to the updated responsibilities of varios parts of the ship, the `Captain` feels
+In addition, due to the updated responsibilities of various parts of the ship, the `Captain` feels
 that the ship's software is getting more difficult to test. Therefor, he would like to you implement
 the `CaptainsLog`, a special part of the ship that records everything that happens aboard, such as
-`Radio` broacasts and `Department` outputs along with their time. The `CaptainsLog` should only be
+`Radio` broadcasts and `Department` outputs along with their time. The `CaptainsLog` should only be
 in use when testing the ships functions, not during normal operations.
 
 Tasks for challenge completion:
@@ -84,9 +84,9 @@ Tasks for challenge completion:
    straightforward as possible. Make sure you get the exact same output from the program as you did
    prior to the refactor.
 2. Implement the `CrowsNest` with the monkey observer.
-3. Implement the `CaptainsLog`.
+3. Implement the `CaptainsLog`. Make sure it doesn't exist during the normal function of the ship.
 4. Create an automated test for the ship's `Department`s. The test should generate fake `Radio` broadcasts from the
-   `Crew`, and use the `CaptainsLog` to test for the expected output and behavious.
+   `Crew`, and use the `CaptainsLog` to test for the expected output and behaviours.
 
 ## Submission Instructions
 
