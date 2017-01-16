@@ -1,6 +1,29 @@
 # black-pearl-ship
 *Refactoring code-challenge*
 
+```
+                                                    _  _
+                                                   ' \/ '
+   _  _                        <|
+    \/              __'__     __'__      __'__
+                   /    /    /    /     /    /
+                  /\____\    \____\     \____\               _  _
+                 / ___!___   ___!___    ___!___               \/
+               // (      (  (      (   (      (
+             / /   \______\  \______\   \______\
+           /  /   ____!_____ ___!______ ____!_____
+         /   /   /         //         //         /
+      /    /   |         ||         ||         |
+     /_____/     \         \\         \\         \
+           \      \_________\\_________\\_________\
+            \         |          |         |
+             \________!__________!_________!________/
+              \|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_/|
+               \    _______________                /
+^^^%%%^%^^^%^%%^\_"/_)/_)_/_)__)/_)/)/)_)_"_'_"_//)/)/)/)%%%^^^%^^%%%%^
+^!!^^"!%%!^^^!^^^!!^^^%%%%%!!!!^^^%%^^^!!%%%%^^^!!!!!!%%%^^^^%^^%%%^^^!
+```
+
 ## Description
 
 Welcome to the black pearl challenge!  In this code challenge you will be tasked to help the crew of
@@ -90,7 +113,7 @@ Tasks for challenge completion:
 
 ## Submission Instructions
 
-**TODO:** Describe how we expect the code to be submitted.
+Ask for instructions from the Black Pearl Ship crew.
 
 ## License
 
