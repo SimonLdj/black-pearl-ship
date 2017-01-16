@@ -34,11 +34,13 @@ namespace BlackPearlShip
 
         public void ReceiveMessage(string message)
         {
-            Console.WriteLine("Radio: " + message);
+            Console.WriteLine("Captain received: message: {0}", message);
         }
 
         public void ReceiveTime(int time)
         {
+            Console.WriteLine("Captain received: time is {0}", time);
+
             Galley.InputTime(time);
             GunDeck.InputTime(time);
             RumHall.InputTime(time);
@@ -46,11 +48,15 @@ namespace BlackPearlShip
 
         public void ReceiveCrewHunger(int hunger)
         {
+            Console.WriteLine("Captain received: crew hunger level {0}", hunger);
+
             Galley.InputCrewHunger(hunger);
         }
 
         public void ReceiveEnemyDirection(Direction direction)
         {
+            Console.WriteLine("Captain received: enemy detected at direction {0}", direction);
+
             GunDeck.InputEnemiesDirection(direction);
         }
 
@@ -63,6 +69,8 @@ namespace BlackPearlShip
         /// </summary>
         public void SetAmountToDrink(int amount)
         {
+            Console.WriteLine("Captain received: amount of rum to drink: {0}", amount);
+
             // TODO: let the crew drink
 
             // let other departments know about it
@@ -74,6 +82,8 @@ namespace BlackPearlShip
         /// </summary>
         public void SetTypeOfFoodToEat(FoodType foodType)
         {
+            Console.WriteLine("Captain received: type of food to eat: {0}", foodType);
+
             GunDeck.InputCrewAteType(foodType);
             RumHall.InputFoodAte(foodType);
         }
@@ -83,7 +93,7 @@ namespace BlackPearlShip
         /// </summary>
         public void SetAmountOfFoodToEat(int amount)
         {
-
+            Console.WriteLine("Captain received: amount of food to eat: {0}", amount);
         }
 
         /// <summary>
@@ -91,7 +101,7 @@ namespace BlackPearlShip
         /// </summary>
         public void SetCanonToFire(int canonNumber)
         {
-
+            Console.WriteLine("Captain received: cannon to fire: {0}", canonNumber);
         }
 
         /// <summary>
@@ -99,6 +109,8 @@ namespace BlackPearlShip
         /// </summary>
         public void SetHitOrMissEnemyShip(bool isHit)
         {
+            Console.WriteLine("Captain received: did we hit an enemy ship? {0}", isHit);
+
             RumHall.InputHitOrMiss(isHit);
         }
 

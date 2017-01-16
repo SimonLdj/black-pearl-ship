@@ -29,6 +29,8 @@ namespace BlackPearlShip
 
         public void BroadcastMessage(string message)
         {
+            Console.WriteLine("Radio broadcast: message: {0}", message);
+
             foreach (var listener in Listeners)
             {
                 listener.ReceiveMessage(message);
@@ -37,6 +39,8 @@ namespace BlackPearlShip
 
         public void BroadcastTime(int time)
         {
+            Console.WriteLine("Radio broadcast: time is {0}", time);
+
             foreach (var listener in Listeners)
             {
                 listener.ReceiveTime(time);
@@ -45,6 +49,8 @@ namespace BlackPearlShip
 
         public void BroadcastCrewHunger(int hunger)
         {
+            Console.WriteLine("Radio broadcast: crew hunger level is {0}", hunger);
+
             foreach (var listener in Listeners)
             {
                 listener.ReceiveCrewHunger(hunger);
@@ -53,6 +59,8 @@ namespace BlackPearlShip
 
         public void BroadcastEnemyDetected(Direction direction)
         {
+            Console.WriteLine("Radio broadcast: enemy detected at direction {0}", direction);
+
             foreach (var listener in Listeners)
             {
                 listener.ReceiveEnemyDirection(direction);
