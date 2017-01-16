@@ -17,13 +17,11 @@ namespace BlackPearlShip.Departments
     {
         private Captain Captain { get; set; }
         private int lastCrewHunger;
-        private Random random;
 
         public Galley(Captain cr)
         {
             this.Captain = cr;
             lastCrewHunger = 1;
-            random = new Random();
         }
 
         // Input
@@ -109,7 +107,7 @@ namespace BlackPearlShip.Departments
 
         private FoodType getTypeOfFoodByTime(int time)
         {
-            var r = this.random.Next(2);
+            var r = time % 2;
 
             // breakfast
             if (time >= 5 && time < 11)
