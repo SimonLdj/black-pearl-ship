@@ -10,14 +10,17 @@ namespace BlackPearlShip
     {
         public static void Main(string[] args)
         {
-            // create radio and give it to the control room
-            var radio = new RadioReceiver();
-            var controlRoom = new ControlRoom(radio);
+            // create radio and give it to the captain
+            var radio = new Radio();
+            var captain = new Captain(radio);
 
-            // Broadcast some data through the radio
+            // TODO: put this code in some "Crew" class
+
+            // The crew Broadcast some data using the radio
             radio.BroadcastMessage("Hello Black Pearl!");
 
             // day 1
+            // TODO: broadcast day number
             runTime(radio, 0, 7);
             radio.BroadcastCrewHunger(6);
             radio.BroadcastTime(7);
@@ -29,7 +32,7 @@ namespace BlackPearlShip
         /// <summary>
         /// Help method to pass time from start to end (not including end)
         /// </summary>
-        private static void runTime(RadioReceiver radio, int start, int end)
+        private static void runTime(Radio radio, int start, int end)
         {
             for (int i = start; i < end; i++)
             {

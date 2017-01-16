@@ -4,29 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlackPearlShip.Algorithms
+namespace BlackPearlShip.Departments
 {
     /// <summary>
     /// Determine how much Rum the crew should drink.
     /// Input:  time
-    ///         did we hit or miss enemies ship (from WeaponAlgo)
-    ///         type of food crew ate (from MealAlgo)
+    ///         Number of days at sea
+    ///         did we hit or miss enemies ship (from GunDeck)
+    ///         type of food crew ate (from Galley Department)
     /// Output: amount of rum to drink
     /// </summary>
-    public class DrinkingAlgo
+    public class RumHall
     {
-        private ControlRoom ControlRoom { get; set; }
+        private Captain Captain { get; set; }
         private int currentTime;
         private FoodType lastFood;
 
-        public DrinkingAlgo(ControlRoom cr)
+        public RumHall(Captain cr)
         {
-            this.ControlRoom = cr;
+            this.Captain = cr;
             currentTime = 0;
             lastFood = FoodType.Bread;
         }
 
         // Input
+
+        // TODO: Add Input: Number of days at sea
 
         /// <summary>
         /// Get current time, from 0 to 23
@@ -60,11 +63,11 @@ namespace BlackPearlShip.Algorithms
         // Output
 
         /// <summary>
-        /// Send amount to drink to ControlRoom
+        /// Send amount to drink to Captain
         /// </summary>
         private void OutputAmountToDrink(int amount)
         {
-            ControlRoom.SetAmountToDrink(amount);
+            Captain.SetAmountToDrink(amount);
         }
 
         // Algorithms

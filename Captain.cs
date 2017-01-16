@@ -1,4 +1,4 @@
-﻿using BlackPearlShip.Algorithms;
+﻿using BlackPearlShip.Departments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,27 +8,29 @@ using System.Threading.Tasks;
 namespace BlackPearlShip
 {
     /// <summary>
-    /// Main Control Room in the ship.
+    /// controls the ship and tells the crew what to do.
     /// Here we listen to the radio and process all the information.
     /// </summary>
-    public class ControlRoom : IRadioListeners
+    public class Captain : IRadioListeners
     {
-        private RadioReceiver Radio { get; set; }
-        private MealAlgo MealAlgo { get; set; }
-        private WeaponAlgo WeaponAlgo { get; set; }
-        private DrinkingAlgo DrinkingAlgo { get; set; }
+        private Radio Radio { get; set; }
+        private Galley Galley { get; set; }
+        private GunDeck GunDeck { get; set; }
+        private RumHall RumHall { get; set; }
 
-        public ControlRoom(RadioReceiver radio)
+        public Captain(Radio radio)
         {
             this.Radio = radio;
             this.Radio.StartListen(this);
 
-            this.MealAlgo = new MealAlgo(this);
-            this.WeaponAlgo = new WeaponAlgo(this);
-            this.DrinkingAlgo = new DrinkingAlgo(this);
+            this.Galley = new Galley(this);
+            this.GunDeck = new GunDeck(this);
+            this.RumHall = new RumHall(this);
         }
 
         #region Input from Radio
+
+        // TODO: add input days-at-sea
 
         public void ReceiveMessage(string message)
         {
@@ -37,47 +39,47 @@ namespace BlackPearlShip
 
         public void ReceiveTime(int time)
         {
-            MealAlgo.InputTime(time);
-            WeaponAlgo.InputTime(time);
-            DrinkingAlgo.InputTime(time);
+            Galley.InputTime(time);
+            GunDeck.InputTime(time);
+            RumHall.InputTime(time);
         }
 
         public void ReceiveCrewHunger(int hunger)
         {
-            MealAlgo.InputCrewHunger(hunger);
+            Galley.InputCrewHunger(hunger);
         }
 
         public void ReceiveEnemyDirection(Direction direction)
         {
-            WeaponAlgo.InputEnemiesDirection(direction);
+            GunDeck.InputEnemiesDirection(direction);
         }
 
         #endregion Input from Radio
 
-        #region input from algorithms
+        #region input from Departments
 
         /// <summary>
-        /// Receive from DrinkingAlgo how much the crew should drink
+        /// Receive from RumHall how much the crew should drink
         /// </summary>
         public void SetAmountToDrink(int amount)
         {
             // TODO: let the crew drink
 
-            // let other algorithms know about it
-            WeaponAlgo.InputAmountCrewDrank(amount);
+            // let other departments know about it
+            GunDeck.InputAmountCrewDrank(amount);
         }
 
         /// <summary>
-        /// Receive from MealAlgo type of food crew should eat
+        /// Receive from Galley type of food crew should eat
         /// </summary>
         public void SetTypeOfFoodToEat(FoodType foodType)
         {
-            WeaponAlgo.InputCrewAteType(foodType);
-            DrinkingAlgo.InputFoodAte(foodType);
+            GunDeck.InputCrewAteType(foodType);
+            RumHall.InputFoodAte(foodType);
         }
 
         /// <summary>
-        /// Receive from MealAlgo amount of food crew should eat
+        /// Receive from Galley amount of food crew should eat
         /// </summary>
         public void SetAmountOfFoodToEat(int amount)
         {
@@ -85,7 +87,7 @@ namespace BlackPearlShip
         }
 
         /// <summary>
-        /// Receive from WeaponAlgo canon number to fire
+        /// Receive from GunDeck canon number to fire
         /// </summary>
         public void SetCanonToFire(int canonNumber)
         {
@@ -93,13 +95,13 @@ namespace BlackPearlShip
         }
 
         /// <summary>
-        /// Receive from WeaponAlgo did we hit or miss the enemy ship
+        /// Receive from GunDeck did we hit or miss the enemy ship
         /// </summary>
         public void SetHitOrMissEnemyShip(bool isHit)
         {
-            DrinkingAlgo.InputHitOrMiss(isHit);
+            RumHall.InputHitOrMiss(isHit);
         }
 
-        #endregion input from algorithms
+        #endregion input from Departments
     }
 }

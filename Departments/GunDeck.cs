@@ -4,27 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlackPearlShip.Algorithms
+namespace BlackPearlShip.Departments
 {
     /// <summary>
-    /// Algorithm that controls all fire weapons in the ship.
+    /// Determines if the ship should fire on an enemy and how.
     /// Input:   time
     ///          enemies direction
-    ///          amount crew drank (From DrinkAlgo)
-    ///          type of food crew ate (from MealAlgo)
+    ///          amount crew drank (From RumHall)
+    ///          type of food crew ate (from Galley Department)
     /// Output:  cannon number to fire
     ///          did we hit or miss the target
     /// </summary>
-    public class WeaponAlgo
+    public class GunDeck
     {
-        private ControlRoom ControlRoom { get; set; }
+        private Captain Captain { get; set; }
         private FoodType lastFoodCrewAte;
         // how much rum accumulated in the crew stomach
         private int rumAccumilation;
 
-        public WeaponAlgo(ControlRoom cr)
+        public GunDeck(Captain cr)
         {
-            this.ControlRoom = cr;
+            this.Captain = cr;
             lastFoodCrewAte = FoodType.SeaBiscuits;
             rumAccumilation = 0;
         }
@@ -61,11 +61,11 @@ namespace BlackPearlShip.Algorithms
 
         private void OutputCannonNumberToFire(int cannonNumber)
         {
-            ControlRoom.SetCanonToFire(cannonNumber);
+            Captain.SetCanonToFire(cannonNumber);
         }
         private void OutputHitOrMiss(bool isHit)
         {
-            ControlRoom.SetHitOrMissEnemyShip(isHit);
+            Captain.SetHitOrMissEnemyShip(isHit);
         }
 
         // Algorithm

@@ -41,12 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithms\DrinkingAlgo.cs" />
-    <Compile Include="Algorithms\MealAlgo.cs" />
-    <Compile Include="Algorithms\WeaponAlgo.cs" />
+    <Compile Include="Departments\RumHall.cs" />
+    <Compile Include="Departments\Galley.cs" />
+    <Compile Include="Departments\GunDeck.cs" />
     <Compile Include="IRadioListeners.cs" />
-    <Compile Include="RadioReceiver.cs" />
-    <Compile Include="ControlRoom.cs" />
+    <Compile Include="Radio.cs" />
+    <Compile Include="Captain.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

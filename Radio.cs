@@ -10,11 +10,11 @@ namespace BlackPearlShip
     /// This is the main radio receiver of the Ship.
     /// All ships information about the world come form here
     /// </summary>
-    public class RadioReceiver
+    public class Radio
     {
         public List<IRadioListeners> Listeners { get; set; }
 
-        public RadioReceiver()
+        public Radio()
         {
             Listeners = new List<IRadioListeners>();
         }

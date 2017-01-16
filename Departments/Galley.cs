@@ -4,24 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlackPearlShip.Algorithms
+namespace BlackPearlShip.Departments
 {
     /// <summary>
-    /// Algorithm to determine what to eat and how much.
+    /// Determines when, what and how much the crew should eat.
     /// Input:   time
     ///          crew hunger
     /// Output:  type of food to eat
     ///          amount of food to eat
     /// </summary>
-    public class MealAlgo
+    public class Galley 
     {
-        private ControlRoom ControlRoom { get; set; }
+        private Captain Captain { get; set; }
         private int lastCrewHunger;
         private Random random;
 
-        public MealAlgo(ControlRoom cr)
+        public Galley(Captain cr)
         {
-            this.ControlRoom = cr;
+            this.Captain = cr;
             lastCrewHunger = 1;
             random = new Random();
         }
@@ -53,19 +53,19 @@ namespace BlackPearlShip.Algorithms
         // Output
 
         /// <summary>
-        /// Send type of food to eat to ControlRoom
+        /// Send type of food to eat to Captain
         /// </summary>
         private void OutputTypeOfFoodToEat(FoodType type)
         {
-            ControlRoom.SetTypeOfFoodToEat(type);
+            Captain.SetTypeOfFoodToEat(type);
         }
 
         /// <summary>
-        /// Send amount of food to eat to ControlRoom
+        /// Send amount of food to eat to Captain
         /// </summary>
         private void OutputAmountOfFoodToEat(int amount)
         {
-            ControlRoom.SetAmountOfFoodToEat(amount);
+            Captain.SetAmountOfFoodToEat(amount);
         }
 
         // Algorithm
