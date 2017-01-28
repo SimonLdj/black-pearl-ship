@@ -103,9 +103,13 @@ in use when testing the ships functions, not during normal operations.
 
 Tasks for challenge completion:
 
-1. Refactor the code in a way that will make implementing the above requirements as easy and
-   straightforward as possible. Make sure you get the exact same output from the program as you did
+1. Refactor the code in a way that will make implementing all of the above requirements (both new and original) as easy and
+   straightforward as possible. Make sure you get the same output from the program as you did
    prior to the refactor.
+   **Notes:**
+    - Feel free to change as much of the code as you want, just make sure all of the original requirements are still met after the refactor.
+    - Priortize refactoring design problems, not trivialities and cosmetic issues.
+    - Assume that more departments and many more data-dependencies (between different departments) will be added to the code in the future.
 2. Implement the `CrowsNest` with the monkey observer.
 3. Implement the `CaptainsLog`. Make sure it doesn't exist during the normal function of the ship.
 4. Create an automated test for the ship's `Department`s. The test should generate fake `Radio` broadcasts from the
