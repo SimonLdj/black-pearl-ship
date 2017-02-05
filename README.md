@@ -49,7 +49,7 @@ The `Crew` can use the ship's `Radio` to inform the `Captain` of the following t
 - Number of days at sea
 - Current time of day
 - Hunger level
-- Whether an enemy was detected
+- Whether an enemy ship was detected
 - Messages to the captain
 
 ## Ship departments
@@ -91,9 +91,9 @@ the monkey's code into something more maintainable and testable and then add som
 functionality.
 
 Due to the monkey's poor performance as a ship's programmer, he was transferred to the `CrowsNest`
-department - a small platform on top of the tallest mast from which he is to observe. The monkey
-must report if an enemy ship is in range (instead of the `Crew`), and, after the `GunDeck` fires
-upon it, he must report whether it was hit by the cannons (instead of the `GunDeck`).
+department - a small platform on top of the tallest mast from which he is to observe. After the
+`GunDeck` fires upon an enemy ship, he must report whether it was hit by the cannons (instead of the
+`GunDeck`).
 
 In addition, due to the updated responsibilities of various parts of the ship, the `Captain` feels
 that the ship's software is getting more difficult to test. Therefor, he would like to you implement
