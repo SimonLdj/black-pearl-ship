@@ -49,7 +49,7 @@ The `Crew` can use the ship's `Radio` to inform the `Captain` of the following t
 - Number of days at sea
 - Current time of day
 - Hunger level
-- Whether an enemy was detected
+- Whether an enemy ship was detected
 - Messages to the captain
 
 ## Ship departments
@@ -90,10 +90,10 @@ drinking rum, so the implementation is somewhat messy.  In this challenge, you'r
 the monkey's code into something more maintainable and testable and then add some necessary
 functionality.
 
-Due to the monkey's poor performance as a ship's programmer, he was transferred to the `CrowsNest` -
-a small platform on top of the tallest mast from which he is to observe. The monkey must report if
-an enemy ship is in range (instead of the `Crew`), and, after the `GunDeck` fires upon it, he must
-report whether it was hit by the cannons (instead of the `GunDeck`).
+Due to the monkey's poor performance as a ship's programmer, he was transferred to the `CrowsNest`
+department - a small platform on top of the tallest mast from which he is to observe. After the
+`GunDeck` fires upon an enemy ship, he must report whether it was hit by the cannons (instead of the
+`GunDeck`).
 
 In addition, due to the updated responsibilities of various parts of the ship, the `Captain` feels
 that the ship's software is getting more difficult to test. Therefor, he would like to you implement
@@ -113,7 +113,7 @@ in use when testing the ships functions, not during normal operations.
     - Assume that more departments and many more data-dependencies (between
       different departments) will be added to the code in the future.
     - After refactoring, commit your code before continuing to the next task.
-2. After your refactored code works properly, implement the `CrowsNest` with the monkey observer.
+2. After your refactored code works properly, implement the `CrowsNest` department.
 3. Implement the `CaptainsLog`. Make sure it doesn't exist during the normal function of the ship.
 4. Create an automated test for the ship's `Department`s. The test should generate fake `Radio` broadcasts from the
    `Crew`, and use the `CaptainsLog` to test for the expected output and behaviours.
