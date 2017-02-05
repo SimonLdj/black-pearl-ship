@@ -101,7 +101,7 @@ the `CaptainsLog`, a special part of the ship that records everything that happe
 `Radio` broadcasts and `Department` outputs along with their time. The `CaptainsLog` should only be
 in use when testing the ships functions, not during normal operations.
 
-Tasks for challenge completion:
+### Tasks for challenge completion
 
 1. Refactor the code in a way that will make implementing all of the above
    requirements (both new and original) as easy and straightforward as possible.
