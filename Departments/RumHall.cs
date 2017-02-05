@@ -36,7 +36,8 @@ namespace BlackPearlShip.Departments
         {
             currentTime = hour;
             var amount = CalculateProbabilityToDrink(currentTime, lastFood);
-            OutputAmountToDrink(amount);
+            if (amount > 0)
+                OutputAmountToDrink(amount);
         }
 
         public void InputHitOrMiss(bool isHit)
