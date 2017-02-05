@@ -76,7 +76,7 @@ namespace BlackPearlShip
         {
             Console.WriteLine("Captain received: amount of rum to drink: {0}", amount);
 
-            // TODO: let the crew drink
+            // Assume: letting the crew drink
 
             // let other departments know about it
             GunDeck.InputAmountCrewDrank(amount);
@@ -89,6 +89,8 @@ namespace BlackPearlShip
         {
             Console.WriteLine("Captain received: type of food to eat: {0}", foodType);
 
+            // Assume: letting the crew eat
+
             GunDeck.InputCrewAteType(foodType);
             RumHall.InputFoodAte(foodType);
         }
@@ -99,6 +101,8 @@ namespace BlackPearlShip
         public void SetAmountOfFoodToEat(int amount)
         {
             Console.WriteLine("Captain received: amount of food to eat: {0}", amount);
+
+            // Assume captain may need this data someday
         }
 
         /// <summary>
@@ -107,6 +111,8 @@ namespace BlackPearlShip
         public void SetCanonToFire(int canonNumber)
         {
             Console.WriteLine("Captain received: cannon to fire: {0}", canonNumber);
+
+            // Assume captain may need this data someday
         }
 
         /// <summary>
