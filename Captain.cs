@@ -30,8 +30,6 @@ namespace BlackPearlShip
 
         #region Input from Radio
 
-        // TODO: add input days-at-sea
-
         public void ReceiveMessage(string message)
         {
             Console.WriteLine("Captain received: message: {0}", message);
@@ -58,6 +56,13 @@ namespace BlackPearlShip
             Console.WriteLine("Captain received: enemy detected at direction {0}", direction);
 
             GunDeck.InputEnemiesDirection(direction);
+        }
+
+        public void ReceiveDaysAtSea(int days)
+        {
+            Console.WriteLine("Captain received: days at sea is {0}", days);
+
+            RumHall.InputDaysAtSea(days);
         }
 
         #endregion Input from Radio

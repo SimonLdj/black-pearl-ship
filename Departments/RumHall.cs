@@ -29,8 +29,6 @@ namespace BlackPearlShip.Departments
 
         // Input
 
-        // TODO: Add Input: Number of days at sea
-
         /// <summary>
         /// Get current time, from 0 to 23
         /// </summary>
@@ -58,6 +56,11 @@ namespace BlackPearlShip.Departments
         public void InputFoodAte(FoodType foodType)
         {
             lastFood = foodType;
+        }
+
+        public void InputDaysAtSea(int days)
+        {
+            // Assume doing something with this input
         }
 
         // Output

@@ -66,5 +66,16 @@ namespace BlackPearlShip
                 listener.ReceiveEnemyDirection(direction);
             }
         }
+
+        public void BroadcastDaysAtSea(int days)
+        {
+            Console.WriteLine("Radio broadcast: days at sea is {0}", days);
+
+            foreach (var listener in Listeners)
+            {
+                listener.ReceiveDaysAtSea(days);
+            }
+        }
+
     }
 }

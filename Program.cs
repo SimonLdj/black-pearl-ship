@@ -20,8 +20,8 @@ namespace BlackPearlShip
             radio.BroadcastMessage("Hello Black Pearl!");
 
             // day 1
-            // TODO: broadcast day number
             Console.WriteLine("======= day #1 ======");
+            radio.BroadcastDaysAtSea(1);
             runTime(radio, 0, 7);
             radio.BroadcastCrewHunger(6);
             radio.BroadcastTime(7);
@@ -30,8 +30,8 @@ namespace BlackPearlShip
             runTime(radio, 14, 24);
 
             // day 2
-            // TODO: broadcast day number
             Console.WriteLine("======= day #2 ======");
+            radio.BroadcastDaysAtSea(2);
             runTime(radio, 0, 7);
             radio.BroadcastCrewHunger(4);
             radio.BroadcastTime(7);
@@ -45,8 +45,8 @@ namespace BlackPearlShip
             runTime(radio, 20, 24);
 
             // day 3
-            // TODO: broadcast day number
             Console.WriteLine("======= day #3 ======");
+            radio.BroadcastDaysAtSea(3);
             runTime(radio, 0, 3);
             radio.BroadcastEnemyDetected(Direction.North);
             radio.BroadcastTime(3);

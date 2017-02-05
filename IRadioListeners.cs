@@ -26,6 +26,11 @@ namespace BlackPearlShip
         /// Receive enemies detected direction
         /// </summary>
         void ReceiveEnemyDirection(Direction direction);
+
+        /// <summary>
+        /// Receive days at sea
+        /// </summary>
+        void ReceiveDaysAtSea(int day);
     }
 
     public enum Direction { North, West, East, South}
