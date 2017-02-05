@@ -35,7 +35,9 @@ namespace BlackPearlShip.Departments
         {
             var rumEffect = CalculateRumEffect(rumAccumilation, lastFoodCrewAte);
             var isHit = CalculateCanHit(rumEffect, direction);
+            OutputCannonNumberToFire(1); // Assume it's more sophisticated
             OutputHitOrMiss(isHit);
+
         }
 
         public void InputAmountCrewDrank(int amount)
